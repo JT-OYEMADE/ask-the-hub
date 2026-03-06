@@ -31,8 +31,7 @@ export function Header({ onOpenHistory }: HeaderProps) {
             </svg>
           </div>
           <span className="font-display font-extrabold text-lg tracking-tight text-text">
-            Ask The{" "}
-            <span style={{ color: "#d4ff5c" }}>Hub</span>
+            Ask The <span style={{ color: "#d4ff5c" }}>Hub</span>
           </span>
         </div>
         <div className="flex items-center gap-3">
@@ -44,11 +43,11 @@ export function Header({ onOpenHistory }: HeaderProps) {
               aria-label="Search history"
             >
               <Clock size={16} />
-              <span>History</span>
+              <span className="">History</span>
             </button>
           )}
           <div
-            className="text-[10px] uppercase tracking-wider text-muted px-3 py-1.5 rounded-full border"
+            className="text-[10px] hidden md:block uppercase tracking-wider text-muted px-3 py-1.5 rounded-full border"
             style={{
               background: "rgba(212,255,92,0.1)",
               borderColor: "rgba(212,255,92,0.2)",
