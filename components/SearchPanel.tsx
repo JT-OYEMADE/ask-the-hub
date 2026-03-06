@@ -43,9 +43,9 @@ export function SearchPanel({
   };
 
   return (
-    <div className="relative z-10 max-w-[860px] mx-auto px-6">
+    <div className="content-container relative z-10 max-w-[860px] mx-auto px-6">
       <div
-        className="relative rounded-[20px] p-7 border"
+        className="search-panel relative rounded-[20px] p-7 border"
         style={{
           background: "#111119",
           borderColor: "rgba(255,255,255,0.06)",
@@ -63,7 +63,7 @@ export function SearchPanel({
           onKeyDown={handleKeyDown}
           placeholder="e.g. Renewable energy adoption in Nigeria, or AI regulation in the EU…"
           disabled={loading}
-          className="w-full font-sans text-base font-light leading-relaxed rounded-xl border min-h-[100px] p-[18px_20px] resize-none placeholder:text-muted focus:outline-none focus:ring-[3px] transition-colors disabled:opacity-50"
+          className="search-textarea w-full font-sans text-base font-light leading-relaxed rounded-xl border min-h-[100px] p-[18px_20px] resize-none placeholder:text-muted focus:outline-none focus:ring-[3px] transition-colors disabled:opacity-50"
           style={{
             background: "rgba(255,255,255,0.03)",
             borderColor: "rgba(255,255,255,0.06)",
@@ -77,18 +77,18 @@ export function SearchPanel({
             e.target.style.boxShadow = "none";
           }}
         />
-        <div className="mt-5">
-          <label className="block text-[10px] uppercase tracking-wider text-muted mb-2">
+        <div className="depth-row mt-5">
+          <label className="depth-label block text-[10px] uppercase tracking-wider text-muted mb-2">
             Depth
           </label>
-          <div className="flex flex-wrap gap-2">
+          <div className="depth-buttons flex flex-wrap gap-2">
             {DEPTH_OPTIONS.map((opt) => (
               <button
                 key={opt.value}
                 type="button"
                 onClick={() => setDepth(opt.value)}
                 disabled={loading}
-                className="px-3.5 py-1.5 rounded-lg border text-sm transition-colors disabled:opacity-50 hover:border-[rgba(212,255,92,0.3)] hover:text-white"
+                className="depth-btn px-3.5 py-1.5 rounded-lg border text-sm transition-colors disabled:opacity-50 hover:border-[rgba(212,255,92,0.3)] hover:text-white"
                 style={
                   depth === opt.value
                     ? {
@@ -112,7 +112,7 @@ export function SearchPanel({
           type="button"
           onClick={handleSubmit}
           disabled={!displayValue.trim() || loading}
-          className="w-full mt-6 flex items-center justify-center gap-2 rounded-xl py-4 font-display font-bold text-base text-black transition-all disabled:opacity-50 disabled:transform-none hover:-translate-y-px hover:shadow-lg"
+          className="search-submit-btn w-full mt-6 flex items-center justify-center gap-2 rounded-xl py-4 font-display font-bold text-base text-black transition-all disabled:opacity-50 disabled:transform-none hover:-translate-y-px hover:shadow-lg"
           style={{
             background: "#d4ff5c",
             boxShadow: "none",

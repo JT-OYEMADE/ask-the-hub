@@ -14,7 +14,7 @@ export function InsightsSection({ insights }: InsightsSectionProps) {
       }}
     >
       <div
-        className="flex items-center gap-3 px-5 py-4 border-b"
+        className="result-section-header flex items-center gap-3 px-5 py-4 border-b"
         style={{ borderColor: "rgba(255,255,255,0.06)" }}
       >
         <div
@@ -30,7 +30,7 @@ export function InsightsSection({ insights }: InsightsSectionProps) {
           Deep Insights
         </h2>
       </div>
-      <div className="grid grid-cols-1 min-[500px]:grid-cols-2 gap-3 px-5 py-5">
+      <div className="result-section-body grid grid-cols-1 min-[500px]:grid-cols-2 gap-3 px-5 py-5">
         {insights.map((insight, i) => (
           <div
             key={i}

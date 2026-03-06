@@ -16,7 +16,7 @@ export function StatsSection({ stats }: StatsSectionProps) {
       }}
     >
       <div
-        className="flex items-center gap-3 px-5 py-4 border-b"
+        className="result-section-header flex items-center gap-3 px-5 py-4 border-b"
         style={{ borderColor: "rgba(255,255,255,0.06)" }}
       >
         <div
@@ -32,23 +32,23 @@ export function StatsSection({ stats }: StatsSectionProps) {
           Key Statistics & Data
         </h2>
       </div>
-      <div className="px-5 py-5 flex flex-wrap gap-3">
+      <div className="stat-row result-section-body px-5 py-5 flex flex-wrap gap-3">
         {stats.map((item, i) => (
           <div
             key={i}
-            className="flex-1 min-w-[130px] rounded-[10px] border px-4 py-2.5"
+            className="stat-item flex-1 min-w-[130px] rounded-[10px] border px-4 py-2.5"
             style={{
               background: "rgba(255,255,255,0.04)",
               borderColor: "rgba(255,255,255,0.06)",
             }}
           >
             <div
-              className="font-display font-bold text-[1.1rem]"
+              className="stat-value font-display font-bold text-[1.1rem]"
               style={{ color: "#d4ff5c" }}
             >
               {item.value}
             </div>
-            <div className="text-[0.73rem] text-muted uppercase tracking-wider mt-0.5">
+            <div className="stat-label text-[0.73rem] text-muted uppercase tracking-wider mt-0.5">
               {item.label}
             </div>
           </div>

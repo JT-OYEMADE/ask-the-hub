@@ -277,21 +277,6 @@ body {
   border-radius: 999px;
 }
 
-/* MOBILE */
-@media (max-width: 640px) {
-  .drawer {
-    height: 92vh;
-  }
-
-  .drawer-header {
-    padding: 16px 20px 14px;
-  }
-
-  .drawer-body {
-    padding: 20px 20px 32px;
-  }
-}
-
 /* HISTORY OVERLAY */
 .history-overlay {
   position: fixed;
@@ -447,6 +432,7 @@ body {
   line-height: 1.4;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   flex: 1;
@@ -591,4 +577,327 @@ body {
 .icon-btn.bookmarked {
   border-color: rgba(255, 200, 50, 0.3);
   color: #ffc832;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Global layout */
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 640px) {
+  .content-container {
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Header — mobile */
+@media (max-width: 640px) {
+  .header-root {
+    padding: 20px 16px 0;
+  }
+
+  .header-root .flex.items-center.justify-between {
+    gap: 12px;
+  }
+
+  .header-logo-text {
+    font-size: 0.95rem;
+  }
+
+  .header-badge {
+    font-size: 0.62rem;
+    padding: 3px 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  .header-badge {
+    display: none;
+  }
+}
+
+/* History trigger: hide label on very small screens */
+@media (max-width: 360px) {
+  .history-trigger-label {
+    display: none;
+  }
+}
+
+/* Touch targets & tap delay */
+button,
+.history-trigger,
+.icon-btn,
+.drawer-close,
+.history-icon-btn,
+.depth-btn,
+.example-chip,
+.clear-btn,
+.search-submit-btn {
+  touch-action: manipulation;
+}
+
+@media (max-width: 640px) {
+  .history-trigger,
+  .depth-btn,
+  .example-chip {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+/* Hero — mobile */
+@media (max-width: 640px) {
+  .hero-section {
+    padding-top: 48px;
+    padding-bottom: 32px;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 2.8rem) !important;
+  }
+
+  .hero-subtext {
+    font-size: 0.9rem;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .hero-pill {
+    font-size: 0.68rem;
+  }
+
+  .hero-section {
+    margin-bottom: 32px;
+  }
+}
+
+/* Search panel — mobile */
+@media (max-width: 640px) {
+  .search-panel {
+    border-radius: 16px;
+    padding: 20px 18px;
+  }
+
+  .search-textarea {
+    min-height: 80px;
+    font-size: 0.95rem;
+    padding: 14px 16px;
+  }
+
+  .depth-buttons {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 6px;
+  }
+
+  .depth-btn {
+    flex: 1;
+    font-size: 0.75rem;
+    padding: 5px 12px;
+  }
+
+  .search-submit-btn {
+    font-size: 0.95rem;
+    padding: 14px;
+  }
+}
+
+/* Example chips — horizontal scroll on mobile */
+@media (max-width: 640px) {
+  .examples-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .examples-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .example-chip {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+    white-space: nowrap;
+  }
+}
+
+/* Result drawer — mobile */
+@media (max-width: 640px) {
+  .drawer {
+    height: 92vh;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .drawer-header {
+    padding: 16px 18px 14px;
+    gap: 6px;
+  }
+
+  .drawer-title {
+    font-size: clamp(0.95rem, 3vw, 1.4rem);
+  }
+
+  .drawer-body {
+    padding: 20px 16px 36px;
+  }
+
+  .icon-btn,
+  .drawer-close {
+    width: 32px;
+    height: 32px;
+    padding: 6px;
+    box-sizing: content-box;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .drawer-header .flex.items-center.gap-2 {
+    gap: 6px;
+  }
+}
+
+/* Drawer header: icon-only on very small screens (no label) — handled by icon size above */
+
+/* Result sections (inside drawer) — mobile */
+@media (max-width: 640px) {
+  .result-section-header {
+    padding: 14px 16px;
+  }
+
+  .result-section-header h2 {
+    font-size: 0.78rem;
+  }
+
+  .result-section-body {
+    padding: 16px;
+  }
+
+  .result-section-body.section-body {
+    padding: 16px;
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 16px;
+  }
+
+  .stat-item {
+    min-width: 0;
+  }
+
+  .stat-value {
+    font-size: 1rem;
+  }
+
+  .stat-label {
+    font-size: 0.68rem;
+  }
+
+  .link-item {
+    padding: 12px;
+  }
+
+  .link-item-title {
+    font-size: 0.83rem;
+  }
+
+  .link-item-desc {
+    font-size: 0.72rem;
+  }
+}
+
+/* History panel — mobile */
+@media (max-width: 640px) {
+  .history-panel {
+    width: 100vw;
+    max-width: 100vw;
+  }
+
+  .history-header {
+    padding: 22px 18px 0;
+  }
+
+  .history-card {
+    padding: 12px 12px 10px;
+  }
+
+  .history-card-query {
+    font-size: 0.83rem;
+  }
+}
+
+/* Loading state — mobile */
+@media (max-width: 640px) {
+  .loading-state {
+    padding: 40px 0;
+  }
+
+  .loading-state-text {
+    font-size: 0.8rem;
+  }
+
+  .loading-step-text {
+    font-size: 0.75rem;
+  }
+}
+
+/* Footer — mobile */
+@media (max-width: 640px) {
+  .footer {
+    font-size: 0.68rem;
+    padding-bottom: 24px;
+    line-height: 1.8;
+    text-align: center;
+  }
+}
+
+/* Drawer result footer bar (if present) — mobile */
+@media (max-width: 640px) {
+  .result-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .result-footer .search-submit-btn,
+  .result-footer button {
+    width: 100%;
+  }
+}
+
+/* ——— Tablet (641px – 1024px) ——— */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .content-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem) !important;
+  }
+
+  .depth-buttons {
+    flex-wrap: nowrap;
+  }
+
+  .history-panel {
+    width: 340px;
+  }
+
+  .drawer {
+    height: 88vh;
+  }
 }

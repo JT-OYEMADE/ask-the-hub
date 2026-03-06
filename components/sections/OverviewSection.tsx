@@ -14,7 +14,7 @@ export function OverviewSection({ overview }: OverviewSectionProps) {
       }}
     >
       <div
-        className="flex items-center gap-3 px-5 py-4 border-b"
+        className="result-section-header flex items-center gap-3 px-5 py-4 border-b"
         style={{ borderColor: "rgba(255,255,255,0.06)" }}
       >
         <div
@@ -31,7 +31,7 @@ export function OverviewSection({ overview }: OverviewSectionProps) {
         </h2>
       </div>
       <div
-        className="section-body px-5 py-5 text-[0.93rem] leading-relaxed font-light"
+        className="result-section-body section-body px-5 py-5 text-[0.93rem] leading-relaxed font-light"
         style={{ color: "#c0c0cc" }}
         dangerouslySetInnerHTML={{ __html: overview }}
       />

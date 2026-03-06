@@ -31,7 +31,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${syne.variable} ${dmSans.variable}`}
-      style={{ background: "#06060a" }}
+      style={{ background: "#06060a", overflowX: "hidden" }}
     >
       <head>
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />

@@ -8,7 +8,7 @@ interface HeaderProps {
 
 export function Header({ onOpenHistory }: HeaderProps) {
   return (
-    <header className="relative z-10 max-w-[860px] mx-auto px-6 pt-9">
+    <header className="header-root content-container relative z-10 max-w-[860px] mx-auto px-6 pt-9">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div
@@ -30,7 +30,7 @@ export function Header({ onOpenHistory }: HeaderProps) {
               <path d="m21 21-4.35-4.35" />
             </svg>
           </div>
-          <span className="font-display font-extrabold text-lg tracking-tight text-text">
+          <span className="header-logo-text font-display font-extrabold text-lg tracking-tight text-text">
             Ask The <span style={{ color: "#d4ff5c" }}>Hub</span>
           </span>
         </div>
@@ -43,11 +43,13 @@ export function Header({ onOpenHistory }: HeaderProps) {
               aria-label="Search history"
             >
               <Clock size={16} />
-              <span className="">History</span>
+              <span className="history-trigger-label hidden md:block">
+                History
+              </span>
             </button>
           )}
           <div
-            className="text-[10px] hidden md:block uppercase tracking-wider text-muted px-3 py-1.5 rounded-full border"
+            className="header-badge text-[10px] uppercase tracking-wider hidden md:block text-muted px-3 py-1.5 rounded-full border"
             style={{
               background: "rgba(212,255,92,0.1)",
               borderColor: "rgba(212,255,92,0.2)",

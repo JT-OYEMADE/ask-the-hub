@@ -25,15 +25,15 @@ export function LoadingState() {
   }, []);
 
   return (
-    <div className="relative z-10 py-16 flex flex-col items-center justify-center">
+    <div className="loading-state relative z-10 py-16 flex flex-col items-center justify-center">
       <div
         className="w-12 h-12 rounded-full border-2 border-[rgba(255,255,255,0.06)] border-t-accent animate-spin-slow"
         style={{ borderTopColor: "#d4ff5c" }}
       />
-      <p className="mt-4 text-muted text-[0.85rem] font-light">
+      <p className="loading-state-text mt-4 text-muted text-[0.85rem] font-light">
         Researching your topic…
       </p>
-      <div className="mt-8 flex flex-col gap-2">
+      <div className="loading-state-steps mt-8 flex flex-col gap-2">
         {STEPS.map((step, i) => (
           <div
             key={step}
@@ -45,7 +45,7 @@ export function LoadingState() {
               className="w-1.5 h-1.5 rounded-full flex-shrink-0"
               style={{ background: "#d4ff5c" }}
             />
-            <span className="text-sm text-muted">{step}</span>
+            <span className="loading-step-text text-sm text-muted">{step}</span>
           </div>
         ))}
       </div>
